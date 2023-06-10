@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-2u3eupgfmgz&s12l)d2yg$o#sh7kq3epk76or8qe6!sovyf$jn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '8000-maish79-whiskeyshop-cgww7yt4xti.ws-eu99.gitpod.io' ]
+ALLOWED_HOSTS = [ '8000-maish79-whiskeyshop-4iazfi7wiif.ws-eu99.gitpod.io'  ]
 
 
 # Application definition
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +62,10 @@ ROOT_URLCONF = 'whiskey_shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                os.path.join(BASE_DIR, 'templates'),
+                os.path.join(BASE_DIR, 'templates', 'allauth'),
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
