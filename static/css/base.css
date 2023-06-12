@@ -1,4 +1,4 @@
-{%}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
@@ -6,21 +6,54 @@ html {
     height: 100%;
 }
 
-body {
-    /* background: url('') no-repeat center center fixed; */
-    background: url('/media/whiskey-hero.jpg') no-repeat top center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Dancing Script', cursive;
-}
+
+
+.whiskey-hero {
+    background: url('/media/whiskey-hero.jpg') no-repeat center center fixed;
+    /* background-color: rgb(174 230 242); */
+    background-size: cover; /* Use "cover" instead of "contain" for a more immersive image */
+    height: 65vh;
+    position: relative;
+  }
+  
+  .hero-text {
+    position: absolute;
+    text-align: right;
+    top: 50%; /* Adjusted to center the text vertically */
+    right: 20%;
+    transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+  }
+  
+  .icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 2rem; /* Increased the size to make it more noticeable */
+    width: 2rem; /* Increased the size to make it more noticeable */
+    border-radius: 50%; /* Added a border radius to make the icon rounded */
+  }
+  
+  .shop-now-button {
+    background-color: black;
+    color: aliceblue;
+    padding: 0.5rem 1rem; /* Added padding to make the button more clickable */
+    border-radius: 0.25rem; /* Added a slight border radius to soften the button's edges */
+    font-weight: bold; /* Increased the font weight for emphasis */
+  }
+  
+  .shop-now-button:hover {
+    border: 2px solid black;
+    background: white; /* Changed the background color to white for better contrast */
+    color: black; /* Changed the text color to black for better contrast */
+  }
+  
 
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
-      max-width: 80%;
+      max-width: 90%;
     }
   }
 
@@ -35,6 +68,6 @@ body {
       }
 
       .header-container {
-          padding-top: 164px;
+          padding-top: 120px;
       }
   }
