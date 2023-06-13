@@ -1,0 +1,94 @@
+[
+    {
+      "pk": 1,
+      "models": "products.product",
+      "fields": {
+        "sku": "WH001",
+        "name": "Single Malt Whiskey",
+        "description": "Aged single malt whiskey with rich flavors and a smooth finish.",
+        "price": 50,
+        "category": "whiskey",
+        "rating": 4.5,
+        "image": "whiskey001.jpg"
+      }
+    },
+    {
+      "pk": 2,
+      "models": "products.product",
+      "fields": {
+        "sku": "RM001",
+        "name": "Spiced Rum",
+        "description": "Premium spiced rum with a blend of exotic spices and hints of vanilla.",
+        "price": 40,
+        "category": "rum",
+        "rating": 4.2,
+        "image": "rum001.jpg"
+      }
+    },
+    {
+      "pk": 3,
+      "models": "products.product",
+      "fields": {
+        "sku": "SP001",
+        "name": "Premium Vodka",
+        "description": "Ultra-smooth premium vodka made from the finest ingredients.",
+        "price": 30,
+        "category": "spirit",
+        "rating": 4.8,
+        "image": "spirit001.jpg"
+      }
+    },
+    {
+      "pk": 4,
+      "models": "products.product",
+      "fields": {
+        "sku": "GN001",
+        "name": "London Dry Gin",
+        "description": "Classic London dry gin with a perfect balance of botanical flavors.",
+        "price": 35,
+        "category": "gin",
+        "rating": 4.4,
+        "image": "gin001.jpg"
+      }
+    },
+    {
+      "pk": 5,
+      "models": "products.product",
+      "fields": {
+        "sku": "BN001",
+        "name": "Kentucky Bourbon",
+        "description": "Authentic Kentucky bourbon with a rich caramel flavor and oak notes.",
+        "price": 55,
+        "category": "bourbon",
+        "rating": 4.6,
+        "image": "bourbon001.jpg"
+      }
+    },
+    {
+      "pk": 6,
+      "models": "products.product",
+      "fields": {
+        "sku": "WN001",
+        "name": "Cabernet Sauvignon",
+        "description": "Full-bodied red wine with rich dark fruit flavors and a velvety texture.",
+        "price": 25,
+        "category": "wine",
+        "rating": 4.3,
+        "image": "wine001.jpg"
+      }
+    },
+    {
+      "pk": 7,
+      "models": "products.product",
+      "fields": {
+        "sku": "CH001",
+        "name": "Brut Champagne",
+        "description": "Elegant and crisp champagne with fine bubbles and a delightful finish.",
+        "price": 60,
+        "category": "champagne",
+        "rating": 4.7,
+        "image": "champagne001.jpg"
+      }
+    }
+  ]
+  

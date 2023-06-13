@@ -1,0 +1,7 @@
+[{"pk":1,"model":"products.category","fields":{"name":"whiskey","friendly_name":"Whiskey"}},
+{"pk":2,"model":"products.category","fields":{"name":"rum","friendly_name":"Rum"}},
+{"pk":3,"model":"products.category","fields":{"name":"spirit","friendly_name":"Spirit"}},
+{"pk":4,"model":"products.category","fields":{"name":"gin","friendly_name":"Gin"}},
+{"pk":5,"model":"products.category","fields":{"name":"bourbon","friendly_name":"Bourbon"}},
+{"pk":6,"model":"products.category","fields":{"name":"wine","friendly_name":"Wine"}},
+{"pk":7,"model":"products.category","fields":{"name":"champagne","friendly_name":"Champagne"}},]
