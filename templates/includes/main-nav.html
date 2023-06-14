@@ -18,13 +18,13 @@
         Categories
       </a>
       <ul class="dropdown-menu border-0 rounded-0" aria-labelledby="categories-link">
-        <li><a class="dropdown-item" href="#">Whiskey</a></li>
-        <li><a class="dropdown-item" href="#">Rum</a></li>
-        <li><a class="dropdown-item" href="#">Spirit</a></li>
-        <li><a class="dropdown-item" href="#">Gin</a></li>
-        <li><a class="dropdown-item" href="#">Bourbon</a></li>
-        <li><a class="dropdown-item" href="#">Wines</a></li>
-        <li><a class="dropdown-item" href="#">Champagne</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=whiskey">Whiskey</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=rum">Rum</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=spirit">Spirit</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=gin">Gin</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=bourbon">Bourbon</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=wines">Wines</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=champagne">Champagne</a></li>
 
       </ul>
     </li>
