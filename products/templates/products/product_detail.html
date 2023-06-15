@@ -17,7 +17,7 @@
                 <div class="image-container my-5">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid w-25" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>
                         {% else %}
                         <a href="">
@@ -47,6 +47,43 @@
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
+                            <div class="form-row">
+                                {% with product.has_other_flavors as has_flavors %}
+                                {% if has_flavors %}
+                                    <div class="col-12">
+                                        <label for="id_product_flavor">Flavor:</label>
+                                        <select name="product_flavor" id="id_product_flavor" class="form-control rounded-0 w-50">
+                                            <option value="smoky">Smoky/Peaty</option>
+                                            <option value="fruity">Fruity</option>
+                                            <option value="floral">Floral</option>
+                                            <option value="spicy">Spicy</option>
+                                            <option value="caramel_vanilla">Caramel/Vanilla</option>
+                                            <option value="nutty">Nutty</option>
+                                            <option value="chocolate_coffee">Chocolate/Coffee</option>
+                                            <option value="honey">Honey</option>
+                                            <option value="grain_grassy">Grain/Grassy</option>
+                                            <option value="woody_oak">Woody/Oak</option>
+                                        </select>
+                                    </div>
+                                {% endif %}
+                                {% endwith %}
+                                {% with product.customized_message as c %}
+                                {% if c %}
+                                    <div class="col-12">
+                                        <label for="product_customized_message">Message: </label>
+                                        <textarea class="form-control" id="product_customized_message" rows="3" placeholder="Happy Birthday, Peter!"></textarea>
+                                    </div>
+                                {% endif %}
+                                {% endwith %}
+                                <div class="col-12">
+                                    <p class="mt-3"><strong>Quantity:</strong></p>
+                                    <div class="form-group w-50">
+                                        <!-- Remaining form fields... -->
+                                    </div>
+                                </div>
+                            </div>
+                             
+
                             <div class="col-12">
                                 <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">
