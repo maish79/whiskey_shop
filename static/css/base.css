@@ -10,7 +10,7 @@ html, body {
 
 
 .whiskey-hero {
-    background: url('/media/whiskey-hero.jpg') no-repeat center center fixed;
+    background: url('/media/woodford-reserve.jpg') no-repeat center center fixed;
     /* background-color: rgb(174 230 242); */
     background-size: cover; 
     height: 65vh;
@@ -136,4 +136,15 @@ product-img {
 .update-link,
 .remove-item{
   cursor: pointer;
+}
+
+.toast-custom {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 2px;
 }
