@@ -5,7 +5,7 @@
   <head>
 
     <!-- Required meta tags -->
-   
+    
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
@@ -65,8 +65,8 @@
           </form>
           
         </div>
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-          <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-sm-none d-md-block d-none d-sm-block">
+          <ul class="list-inline list-unstyled text-center text-lg my-0">
             <li class="list-inline-item dropdown">
                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="text-center">
@@ -144,13 +144,13 @@
     {% endblock %}
 
     <script type="text/javascript">
-        
         var toastElList = [].slice.call(document.querySelectorAll('.toast'))
         var toastList = toastElList.map(function(toastEl) {
-        
-          return new bootstrap.Toast(toastEl) 
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
         });
-        toastList.forEach(toast => toast.show());
-   </script>
+        toastList.forEach(toast => toast.show()); // This show them
+    </script>
+  
   </body>
 </html>

@@ -71,9 +71,17 @@ html, body {
     }
   
     .header-container {
-      padding-top: 80px; 
+      padding-top: 160px; 
     }
   }
+
+  @media (max-width: 767px) {
+    .list-inline-item {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
     /* Add some styling to the links in the navbar */
     .navbar-nav a {
       color: #000000; 
