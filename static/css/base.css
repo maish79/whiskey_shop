@@ -73,7 +73,7 @@ html, body {
     .header-container {
       padding-top: 80px; 
     }
-  
+  }
     /* Add some styling to the links in the navbar */
     .navbar-nav a {
       color: #000000; 
@@ -92,7 +92,7 @@ html, body {
     .navbar-nav .active a {
       color: #ff0000;
     }
-  }
+ 
 
   .overlay {
     height: 100%;
