@@ -58,52 +58,54 @@ form.addEventListener('submit', function(ev) {
 
     $.post(url, postData).done(function () {
             
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-            card: card,
-            billing_details: {
-                name: $.trim(form.full_name.value),
-                phone: $.trim(form.phone_number.value),
-                email: $.trim(form.email.value),
-                address:{
-                    country: $.trim(form.country.value),
-                    county: $.trim(form.county.value),
-                    city: $.trim(form.city.value),
-                    line1: $.trim(form.street_address1.value),
-                    line2: $.trim(form.street_address2.value),
-                }
-            }
-        },
-        shipping: {
-                name: $.trim(form.full_name.value),
-                phone: $.trim(form.phone_number.value),
-                email: $.trim(form.email.value),
-                address:{
-                    country: $.trim(form.country.value),
-                    county: $.trim(form.county.value),
-                    city: $.trim(form.city.value),
-                    line1: $.trim(form.street_address1.value),
-                    line2: $.trim(form.street_address2.value),
-                    postal_code: $.trim(form.postcode.value),
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card,
+                billing_details: {
+                    name: $.trim(form.full_name.value),
+                    phone: $.trim(form.phone_number.value),
+                    email: $.trim(form.email.value),
+                    address:{
+                        country: $.trim(form.country.value),
+                        state: $.trim(form.county.value),
+                        city: $.trim(form.city.value),
+                        line1: $.trim(form.street_address1.value),
+                        line2: $.trim(form.street_address2.value),
+                    }
                 }
             },
-        }).then(function(result) {
-        if (result.error) {
-            var errorDiv = document.getElementById('card-errors');
-            var html = `
-                <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-                </span>
-                <span>${result.error.message}</span>`;
-            $(errorDiv).html(html);
-            card.update({ 'disabled': false});
-            $('#submit-button').attr('disabled', false);
-        } else {
-            if (result.paymentIntent.status === 'succeeded') {
-                form.submit();
-            }
-        }
+            shipping: {
+                    name: $.trim(form.full_name.value),
+                    phone: $.trim(form.phone_number.value),
+                    address:{
+                        country: $.trim(form.country.value),
+                        state: $.trim(form.county.value),
+                        city: $.trim(form.city.value),
+                        line1: $.trim(form.street_address1.value),
+                        line2: $.trim(form.street_address2.value),
+                        postal_code: $.trim(form.postcode.value),
+                    }
+                },
+            }).then(function(result) {
+                if (result.error) {
+                    var errorDiv = document.getElementById('card-errors');
+                    var html = `
+                        <span class="icon" role="alert">
+                        <i class="fas fa-times"></i>
+                        </span>
+                        <span>${result.error.message}</span>`;
+                    $(errorDiv).html(html);
+                    $('#payment-form').fadeToggle(100);
+                    $('#loading-overlay').fadeToggle(100);
+                    card.update({ 'disabled': false});
+                    $('#submit-button').attr('disabled', false);
+                } else {
+                    if (result.paymentIntent.status === 'succeeded') {
+                        form.submit();
+                    }
+                }
+            });
+        }).fail(function() {
+            location.reload();
+        })
     });
-    }).fail(function() {
-        location.reload();
-    })
