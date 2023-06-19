@@ -10,3 +10,4 @@ django-crispy-forms==1.14.0
 crispy-bootstrap5==0.7
 stripe==5.0.0
 pillow
+django-countries==7.2.1
