@@ -106,6 +106,24 @@
 
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-lg-7 text-right">
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+                        <span class="icon mr-2">
+                            <i class="fad fa-glass-whiskey"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'products' %}?category=whiskey,rum,spirit,gin,boubon,wines,champagne" class="btn btn-black rounded-0 my-2">
+                        <span class="icon mr-2">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </span>
+                        <span class="text-uppercase">All products</span>
+                {% endif %}
+			</div>
+        </div>
     </div>
 </div>
 {% endblock %}
