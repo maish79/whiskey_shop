@@ -31,4 +31,7 @@ urlpatterns = [
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
+handler403 = 'whiskey_shop.views.handler403'
 handler404 = 'whiskey_shop.views.handler404'
+handler405 = 'whiskey_shop.views.handler405'
+handler500 = 'whiskey_shop.views.handler500'
