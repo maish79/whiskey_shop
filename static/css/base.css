@@ -183,4 +183,9 @@ product-img {
   right: 5px;
 }
 
+/* Mailchimp */
+
+#mc_embed_signup form{
+  padding :0;
+}
 
