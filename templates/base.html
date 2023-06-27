@@ -49,11 +49,13 @@
 
     
     {% block extra_title %}
+  
     {% endblock %}
 
+    
   </head>
   <body>
-    <header class="container-fluid fixed-top"></header>
+    <header class="container-fluid sticky-top"></header>
     <div class="row bg-white pt-lg-2 d-flex" id="top-nav">
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-sm-none d-md-block d-none d-sm-block">
           <a href="{% url 'home' %}" class="nav-link main-logo-ling">
@@ -161,6 +163,7 @@
       toastList.forEach(toast => toast.show()); // This show them
     </script>
     {% endblock %}
+
     <footer class="container-wrapper mt-4">
       <div class="container quotes-container content-container">
         <section class="footer">

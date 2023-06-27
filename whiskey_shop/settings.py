@@ -31,7 +31,7 @@ SECRET_KEY =  'matako'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [  '8000-maish79-whiskeyshop-1qhicexe84q.ws-eu100.gitpod.io' , 'whiskey-shop-320e32983cd1.herokuapp.com' , 'localhost' ]
+ALLOWED_HOSTS = [  '8000-maish79-whiskeyshop-1qhicexe84q.ws-eu101.gitpod.io', 'whiskey-shop-320e32983cd1.herokuapp.com' , 'localhost' ]
 
 
 # Application definition
@@ -187,7 +187,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
