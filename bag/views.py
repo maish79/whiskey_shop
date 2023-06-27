@@ -25,8 +25,10 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if flavor in bag[item_id]['items_by_flavor'].keys():
                 bag[item_id]['items_by_flavor'][flavor] += quantity
+                messages.success(request, f'Updated flavor {flavor.upper()} {product.name} quantity to {bag[item_id]["items_by_flavor"][flavor]}')
             else:
                 bag[item_id]['items_by_flavor'][flavor] = quantity
+                messages.success(request, f'Added flavor {flavor.upper()} {product.name} to your bag')
         else:
             bag[item_id] = {'items_by_flavor': {flavor: quantity}}
     else:
