@@ -189,3 +189,17 @@ product-img {
   padding :0;
 }
 
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}

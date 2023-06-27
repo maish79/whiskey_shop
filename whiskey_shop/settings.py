@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 import dj_database_url
 
+if os.path.isfile("env.py"):
+    import env
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +30,6 @@ SECRET_KEY =  'matako'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 
 ALLOWED_HOSTS = [  '8000-maish79-whiskeyshop-1qhicexe84q.ws-eu100.gitpod.io' , 'whiskey-shop-320e32983cd1.herokuapp.com' , 'localhost' ]
 

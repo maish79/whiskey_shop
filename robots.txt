@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://whiskey-shop-320e32983cd1.herokuapp.com/sitemap.xml
