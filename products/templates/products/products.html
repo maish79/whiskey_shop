@@ -46,7 +46,7 @@
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-left">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                            <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                        <span class="small"><a class="text-decoration-none product-link text-black" href="{% url 'products' %}">Products Home</a> | </span>
                         {% endif %}
                         {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                     </p>
@@ -84,8 +84,8 @@
                                         
                                         {% if request.user.is_superuser %}
                                         <small>
-                                            <a href="{% url 'edit_product' product.id %}">Edit</a>
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                            <a href="{% url 'edit_product' product.id %}" class="edit-link"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a class="text-danger  px-3 delete-link" href="{% url 'delete_product' product.id %}"><i class="fa-solid fa-trash"></i></a>
                                         </small>
                                         {% endif %}
                                     </div>
