@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    {{ location.name }}
+    <div id="map"></div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo-uXUeHZ5IuA8F7AJCpqrJdkdXkaRnm4&callback=initMap"></script>
+    <script type="text/javascript">
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: {
+                    lat: 51.898532,
+                    lng: -8.474834
+                }
+            });
+
+            var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            var locations = [
+                { lat: {{ location.latitude }}, lng: {{ location.longitude }}},
+            ];
+
+            var markers = locations.map(function(location, i) {
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                });
+            });
+
+            var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+        }
+    </script>
+{% endblock %}
