@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.contrib import messages
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.template.defaultfilters import slugify
 
 # Create your views here.
 from .models import Location
@@ -57,6 +58,50 @@ class LocationAdd(View):
         except Location.DoesNotExist:
             messages.error(request,
                            'An error occurred when adding your location.')
+            return redirect('locations')
+
+
+class LocationUpdate(View):
+    """
+    A class view for updating an existing location
+    """
+    @method_decorator(login_required)
+    def get(self, request, slug, *args, **kwargs):
+        if not request.user.is_superuser:
+            messages.error(request, 'Sorry, only store owners can do that.')
+            return redirect(reverse('home'))
+
+        location = get_object_or_404(Location, slug=slug)
+        form = LocationForm(instance=location)
+        context = {
+            'form': form
+        }
+        return render(request, 'locations/edit_location.html', context)
+
+    @method_decorator(login_required)
+    def post(self, request, slug, *args, **kwargs):
+        if not request.user.is_superuser:
+            messages.error(request, 'Sorry, only store owners can do that.')
+            return redirect(reverse('home'))
+
+        try:
+            location = get_object_or_404(Location, slug=slug)
+            form = LocationForm(request.POST, request.FILES, instance=location)
+            form.instance.slug = slugify(request.POST['name'])
+            if form.is_valid():
+                form.save()
+                messages.success(request, "Your location has been updated.")
+                return redirect('locations')
+            else:
+                messages.error(request, "Please check that the information you\
+                                entered is valid.")
+                context = {
+                    'form': form
+                }
+                return render(request, 'locations/edit_location.html', context)
+        except Location.DoesNotExist:
+            messages.error(request,
+                           'An error occurred when updating your location.')
             return redirect('locations')
 
 
