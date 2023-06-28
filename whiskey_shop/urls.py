@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import handler404
+
+import whiskey_shop.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,7 +32,7 @@ urlpatterns = [
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-handler403 = 'whiskey_shop.views.handler403'
-handler404 = 'whiskey_shop.views.handler404'
-handler405 = 'whiskey_shop.views.handler405'
-handler500 = 'whiskey_shop.views.handler500'
+handler403 = whiskey_shop.views.handler403
+handler404 = whiskey_shop.views.handler404
+handler405 = whiskey_shop.views.handler405
+handler500 = whiskey_shop.views.handler500
