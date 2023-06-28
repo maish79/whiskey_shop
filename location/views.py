@@ -4,15 +4,20 @@ from django.views import generic, View
 # Create your views here.
 from .models import Location
 
-model = Location
-queryset = Location.objects.all()
-template_name = 'locations/locations.html'
-
-
 class LocationList(generic.ListView):
+    """
+    A class view for getting all categories
+    """
+    model = Location
+    queryset = Location.objects.all()
+    template_name = 'locations/locations.html'
 
-    
-  def get(self, request, slug, *args, **kwargs):
+
+class LocationDetail(View):
+    """
+    A class view for getting a specific location
+    """
+    def get(self, request, slug, *args, **kwargs):
         queryset = Location.objects.all()
         location = get_object_or_404(queryset, slug=slug)
 
