@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            {% if user.is_superuser %}
+                <div class="btn-container d-flex justify-content-end align-items-">
+                    <a class="nav-link btn btn-warning p-4" href="edit/{center{ location.slug }}">Edit <i class="fa fa-pencil"></i></a>
+                    <!-- Delete confirmation modal -->
+                    <a href="#deleteModal" data-bs-toggle="modal" data-bs-target="#deleteModal" class="delete-btn nav-link btn btn-danger p-4">
+                        Delete <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
+                        <span class="sr-only">Delete location</span> 
+                    </a>
+                </div>
+                <!-- Modal for deleting existing plan -->
+                <div class="modal fade py-5" id="deleteModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form method="post" action="{% url 'delete_location' location.id %}">
+                                {% csrf_token %}
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Delete {{ location.name }}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body py-4 d-flex justify-content-center">
+                                    Are you sure you want to delete this location?
+                                </div>
+                                <div class="modal-footer d-flex justify-content-center">
+                                    <button type="button" class="btn btn-secondary p-3" data-bs-dismiss="modal">Cancel <i class="fa-solid fa-xmark"></i></button>
+                                    <button type="submit" class="btn btn-danger p-3">Delete <i class="fa fa-trash"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="page-title my-5 py-5">
+                Where to find us
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4 offset-md-2">
+            <div class="location-details d-flex flex-column">
+                <h3>{{ location.name }}</h3>
+                <p>{{ location.phone_number }}</p>
+                <p>{{ location.email }}</p>
+                <p>{{ location.street_address1 }}</p>
+                {% if location.street_address2 %}
+                    <p>{{ location.street_address2 }}</p>
+                {% endif %}
+                <p>{{ location.town_or_city }}</p>
+                {% if location.county %}
+                    <p>{{ location.county }}</p>
+                {% endif %}
+                <p>{{ location.country }}</p>
+                {% if location.postcode %}
+                    <p>{{ location.postcode }}</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="location-opening-hours">
+                {% for day in days_list %}
+                    <p class="day">
+                        {{ day.day }}: {{ day.open }} - {{ day.close }}
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="map" class="mt-5"></div>
+{% endblock %}
+{% block postloadjs %}
+    {{ block.super }}
+    
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo-uXUeHZ5IuA8F7AJCpqrJdkdXkaRnm4&callback=initMap"></script>
+    <script type="text/javascript">
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: {
+                    lat: 51.898532,
+                    lng: -8.474834
+                }
+            });
+            var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            
+            var locations = [
+                { lat: {{ location.latitude }}, lng: {{ location.longitude }}},
+            ];
+            var markers = locations.map(function(location, i) {
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                });
+            });
+            var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+        }
+    </script>
+{% endblock %}
