@@ -10,7 +10,20 @@
 {% endblock %}
 
 {% block content %}
-    {% for location in location_list %}
-        {{ location.name }}
-    {% endfor %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3 class="page-title my-5 py-5">
+                Locations
+            </h3>
+            <div class="location-links">
+                {% for location in location_list %}
+                    <a href="{% url 'location_detail' location.slug %}" class="location-button">
+                        {{ location.name }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

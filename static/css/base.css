@@ -205,52 +205,79 @@ product-img {
 }
 
 
-    /* Custom Styles */
-       /* Custom Styles */
-       .quotes-container {
-        background-color: #f8f9fa;
-        padding: 20px;
-        border-radius: 5px;
-      }
-  
-      .footer h3 {
-        font-size: 20px;
-        font-weight: bold;
-      }
-  
-      .footer p {
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-  
-      .social-icons a {
-        font-size: 18px;
-        margin-right: 10px;
-      }
-  
-      #mc_embed_signup form {
-        margin-bottom: 0;
-      }
-  
-      #mc_embed_signup p {
-        font-size: 14px;
-        margin-bottom: 15px;
-      }
-  
-      #mc_embed_signup input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ced4da;
-        border-radius: 4px;
-        font-size: 14px;
-      }
-  
-      #mc_embed_signup .button {
-        background-color: #007bff;
-        border-color: #007bff;
-        color: #fff;
-        padding: 10px 15px;
-        font-size: 14px;
-      }
+/* Custom Styles */
+  /* Custom Styles */
+  .quotes-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.footer h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+#mc_embed_signup form {
+  margin-bottom: 0;
+}
+
+#mc_embed_signup p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+#mc_embed_signup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#mc_embed_signup .button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+      /* Locations */
+
+.location-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-button {
+  font-size: 3.6rem;
+  font-weight: 700;
+  padding: 1.5rem 3rem;
+  border: 1px solid var(--primary-colour);
+  margin: 2rem 0;
+  display: block;
+}
+
+.location-button:hover {
+  background-color: var(--primary-colour);
+  color: white;
+}
+
+#map {
+  height: 36rem;
+}
 
       
