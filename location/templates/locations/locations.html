@@ -16,7 +16,7 @@
             <h3 class="page-title my-5 py-5">
                 Locations
             </h3>
-            <div class="location-links">
+            <div class="location-links mb-5 pb-5">
                 {% for location in location_list %}
                     <a href="{% url 'location_detail' location.slug %}" class="location-button">
                         {{ location.name }}

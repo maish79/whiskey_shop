@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="signup">
+    <div class="row">
+        <div
+            class="col-sm-8 col-md-6 offset-sm-2 offset-md-3 p-5"
+        >
+        <h2 class="category-title mt-5">Add Location</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form | crispy }} 
+            <div>
+                <p>
+                    <button class="submit-btn mt-4" type="submit">Add Location <i class="fa fa-plus"></i></button>
+                </p>
+            </div>
+        </form>    
+        </div>
+    </div>
+</section>
+{%endblock%}
