@@ -117,3 +117,27 @@ class LocationDetail(View):
             'location': location,
         }
         return render(request, 'locations/location_detail.html', context)
+        
+
+class LocationDelete(View):
+    """
+    A class view for deleting an existing location
+    """
+    @method_decorator(login_required)
+    def post(self, request, id, **kwargs):
+        """
+        Delete a selected location
+        """
+        if not request.user.is_superuser:
+            messages.error(request, 'Sorry, only store owners can do that.')
+            return redirect(reverse('home'))
+
+        try:
+            location = Menu_Item.objects.get(id=id)
+            location.delete()
+            messages.success(request, "Your location has been deleted.")
+            return redirect('locations')
+        except Location.DoesNotExist:
+            messages.error(request,
+                           'An error occurred when deleting your location.')
+            return redirect('locations')
