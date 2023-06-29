@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %}
+    {{ location.name }}
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row mt-3">
@@ -48,7 +52,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-10 offset-md-2">
-            <h2 class="category-title my-5">
+            <h1 class="category-title my-5">
                 Where to find us
             </h2>
         </div>
@@ -56,7 +60,7 @@
     <div class="row">
         <div class="col-12 col-md-4 offset-md-2 mt-3">
             <div class="location-details d-flex flex-column">
-                <h3>{{ location.name }}</h3>
+                <h2>{{ location.name }}</h2>
                 <p>{{ location.phone_number }}</p>
                 <p>{{ location.email }}</p>
                 <p>{{ location.street_address1 }}</p>
@@ -76,6 +80,7 @@
         <div class="col-12 col-md-6 mt-3">
             <div class="location-opening-hours">
                 {% for day in days_list %}
+                <h2>Opening Hours:</h2>
                     <p class="day">
                         {{ day.day }}: {{ day.open }} - {{ day.close }}
                     </p>
@@ -96,8 +101,8 @@
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
                 center: {
-                    lat: 51.898532,
-                    lng: -8.474834
+                    lat: {{ location.latitude }},
+                    lng: {{ location.longitude }}
                 }
             });
             var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

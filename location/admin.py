@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Location, Hours
+from .models import Location
 
 
 class HoursAdminInline(admin.TabularInline):
