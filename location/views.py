@@ -112,9 +112,12 @@ class LocationDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Location.objects.all()
         location = get_object_or_404(queryset, slug=slug)
+        days = Hours.objects.all().order_by('id')
 
         context = {
             'location': location,
+            'days': days
+
         }
         return render(request, 'locations/location_detail.html', context)
         

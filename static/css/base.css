@@ -280,4 +280,10 @@ product-img {
   height: 36rem;
 }
 
+.location-details,
+    .location-opening-hours,
+    .category-title {
+        text-align: center;
+    }
+
       

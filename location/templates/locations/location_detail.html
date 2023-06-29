@@ -3,7 +3,7 @@
 
 {% block page_header %}
     <div class="container header-container">
-        <div class="row">
+        <div class="row mt-3">
             <div class="col"></div>
         </div>
     </div>
@@ -15,7 +15,7 @@
         <div class="col-12">
             {% if user.is_superuser %}
                 <div class="btn-container d-flex justify-content-end align-items-">
-                    <a class="nav-link btn btn-warning p-4" href="edit/{center{ location.slug }}">Edit <i class="fa fa-pencil"></i></a>
+                    <a class="nav-link btn btn-warning p-4" href="/locations/edit/{{ location.slug }}">Edit <i class="fa fa-pencil"></i></a>
                     <!-- Delete confirmation modal -->
                     <a href="#deleteModal" data-bs-toggle="modal" data-bs-target="#deleteModal" class="delete-btn nav-link btn btn-danger p-4">
                         Delete <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
@@ -47,14 +47,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
-            <h2 class="page-title my-5 py-5">
+        <div class="col-12 col-md-10 offset-md-2">
+            <h2 class="category-title my-5">
                 Where to find us
             </h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-4 offset-md-2">
+        <div class="col-12 col-md-4 offset-md-2 mt-3">
             <div class="location-details d-flex flex-column">
                 <h3>{{ location.name }}</h3>
                 <p>{{ location.phone_number }}</p>
@@ -73,7 +73,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 mt-3">
             <div class="location-opening-hours">
                 {% for day in days_list %}
                     <p class="day">
