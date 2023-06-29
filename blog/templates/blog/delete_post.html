@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_title %}
-   <title>Whiskey Shop | Edit {{ post.title }} </title>
+   <title>Whiskey Shop | Delete {{ post.name }} </title>
 {% endblock %}
 
 {% block page_header %}
@@ -18,20 +18,21 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center my-3">
-                <h2 class="logo-font">Edit {{ post.title }}</h2>
+                <h2 class="logo-font">Delete post</h2>
                 <hr class="w-75 mx-auto separation-line">
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <form class="mt-3" action="{% url 'edit_post' post.slug  %}" method="POST" enctype="multipart/form-data">
+            <div class="col-12 col-md-6 text-center">
+                <form method="POST">
                     {% csrf_token %}
-                    {{ form|crispy }}
-                    <div class="mb-3">
+                    <h4>Are you sure you want to delete <strong>{{ post.title }}?</strong></h4>
+                    <div class="my-4">
                         <a href="{% url 'blog' %}" class="btn btn-outline-black rounded-0 cancel-link text-uppercase">Cancel</a>
-                        <button class="btn btn-black update-link rounded-0 text-uppercase" type="submit">Update Post</button>
+                        <button class="btn btn-black update-link rounded-0 text-uppercase" type="submit">
+                        Delete</button>
                     </div>
-                </form>
+                  </form>
             </div>
         </div>
     </div>
