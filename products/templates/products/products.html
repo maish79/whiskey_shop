@@ -123,7 +123,47 @@
         <i class="fa-solid fa-arrow-up mx-auto my-auto"></i>
     </a>	
 </div>
+
+{% if products.has_other_pages %}
+<nav>
+  <ul class="pagination justify-content-center">
+    {% if products.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ menu_items.previous_page_number }}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+          <span class="page-link" aria-hidden="true">&laquo;</span>
+      </li>
+    {% endif %}
+
+    {% for p in products.paginator.page_range %}
+      {% if menu_items.number == p %}
+        <li class="page-item"><a class="page-link" style="color: #ab5229" href="#">{{ p }}</a></li>
+      {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{ p }}">{{ p }}</a></li>
+      {% endif %}
+    {% endfor %}
+
+    {% if products.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ menu_items.next_page_number }}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <span class="page-link" aria-hidden="true">&raquo;</span>
+      </li>
+    {% endif %}
+</ul>
+</nav>
+{% endif %}
+</section>
 {% endblock %}
+
 
 {% block postloadjs %}
 {{ block.super }}

@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block extra_title %}
-    Locations
-{% endblock %}
+
 
 {% block content %}
 <div class="container">
     {% if user.is_superuser %}
     <div class="row mt-3">
       <div class="col-12 d-flex justify-content-end">
-        <a href="/locations/add/" class="btn btn-outline-success p-3 float-right">Add Location <i class="fa fa-plus"></i></a>
+        <a href="/locations/add/" class="btn btn-outline-primary p-3 float-right">Add Location <i class="fa fa-plus"></i></a>
       </div>
     </div>
     {% endif %}

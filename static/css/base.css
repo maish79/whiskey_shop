@@ -271,19 +271,16 @@ product-img {
   display: block;
 }
 
-.location-button:hover {
-  background-color: var(--primary-colour);
-  color: white;
-}
 
 #map {
   height: 36rem;
 }
 
 .location-details,
-    .location-opening-hours,
-    .category-title {
+.location-opening-hours,
+.category-title {
         text-align: center;
     }
 
-      
+
+  

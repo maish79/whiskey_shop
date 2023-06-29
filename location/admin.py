@@ -13,7 +13,7 @@ class LocationAdmin(admin.ModelAdmin):
     fields = ('name', 'slug', 'email', 'phone_number',
               'street_address1', 'street_address2', 'town_or_city',
               'county', 'country', 'postcode',
-              'latitude', 'longitude',)
+              'latitude', 'longitude')
     list_display = ('name', 'street_address1', 'phone_number')
 
 

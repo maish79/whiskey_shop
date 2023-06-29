@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block extra_title %}
-    {{ location.name }}
-{% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -19,7 +16,7 @@
         <div class="col-12">
             {% if user.is_superuser %}
                 <div class="btn-container d-flex justify-content-end align-items-">
-                    <a class="nav-link btn btn-warning p-4" href="/locations/edit/{{ location.slug }}">Edit <i class="fa fa-pencil"></i></a>
+                    <a class="nav-link btn btn-primary p-4" href="/locations/edit/{{ location.slug }}">Edit <i class="fa fa-pencil"></i></a>
                     <!-- Delete confirmation modal -->
                     <a href="#deleteModal" data-bs-toggle="modal" data-bs-target="#deleteModal" class="delete-btn nav-link btn btn-danger p-4">
                         Delete <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
