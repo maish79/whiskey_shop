@@ -14,3 +14,9 @@ def about_us(request):
 def FAQ(request):
     """A view to return the FAQ us page"""
     return render(request, 'home/FAQ.html')
+    
+
+def sitemap(request):
+    """ A view to return the sitemap us page """
+
+    return render(request, 'home/sitemap.html')

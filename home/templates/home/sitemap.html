@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="sitemap container m-3 p-3">
+  <h1 class="sitemap">
+    Sitemap
+  </h1>
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1">
+      <div id="cont">
+        <ul class="level-0">
+          <li class="lpage"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/">Home</a></li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/sitemap" title="Whiskey shop">Whiskey Shop</a></li>
+          <li>
+            <ul class="level-1">
+              <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/about_us/" title="Whiskey shop - About Us">About Us</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="level-1">
+              <li class="lhead">Accounts/</li>
+              <li>
+                <ul class="level-2">
+                  <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/accounts/login/" title="Whiskey Shop - Sign in">Sign In</a></li>
+                </ul>
+                <ul class="level-2">
+                  <li class="lhead">Password/</li>
+                  <li>
+                    <ul class="level-3">
+                      <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/accounts/password/reset/" title="Whiskey shop - Reset Password">Reset Password</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/accounts/signup/" title="Whiskey Shop - Sign up">Sign Up</a></li>
+            </ul>
+          </li>
+          <li class="lhead">Products</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/" title="Whiskey Shop - Products">Products</a></li>
+          <li class="lhead">Products/price</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/?sort=price&amp;direction=asc" title="Whiskey Shop - Products">Products/price</a></li>
+          <li class="lhead">Products/category</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/?sort=category&amp;direction=asc" title="Whiskey Shop - Products">Products/category</a></li>
+          <li class="lhead">Category/Whiskey</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/?category=whiskey" title="Whiskey Shop - Products">Category/Whiskey</a></li>
+          <li class="lhead">Category/Rum</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/?category=rum" title="Whiskey Shop - Products">Category/Rum</a></li>
+          <li class="lhead">Category/Spirit</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/?category=spirit" title="Whiskey Shop - Products">Category/Spirit</a></li>
+          <li class="lhead">Category/Gin</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/?category=gin" title="Whiskey Shop - Products">Category/Gin</a></li>
+          <li class="lhead">Category/Bourbon</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/?category=bourbon" title="Whiskey Shop - Products">Category/Bourbon</a></li>
+          <li class="lhead">Category/Wine</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/?category=wine" title="Whiskey Shop - Products">Category/Wine</a></li>
+          <li class="lhead">Category/Champagne</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/products/?category=champagne" title="Whiskey Shop - Products">Category/Champagne</a></li>
+          <li class="lhead">Cart/</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/bag/" title="Whiskey Shop - Bag">Bag</a></li>
+          <li class="lhead">Contact/</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/contact/" title="Whiskey Shop - Contact">Contact</a></li>
+          <li class="lhead">Faqs/</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/FAQ/" title="Whiskey Shop - Frequently Asked Questions">Frequently Asked Questions</a></li>
+          <li class="lhead">Locations/</li>
+          <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/locations/" title="Whiskey Shop - Locations">Locations</a></li>
+          <li>
+            <ul class="level-2">
+              <li class="lhead">Heidelberg/</li>
+              <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/locations/heidelberg/" title="Whiskey shop - Heidelberg">Heidelberg</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="level-2">
+              <li class="lhead">Basel/</li>
+              <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/locations/basel/" title="Whiskey Shop - Basel">Basel</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="level-2">
+              <li class="lhead">London/</li>
+              <li class="lpage last-page"><a href="https://whiskey-shop-320e32983cd1.herokuapp.com/locations/london/" title="Whiskey Shop - London">London</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
