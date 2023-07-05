@@ -10,9 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
+
 import os
 import dj_database_url
+from pathlib import Path
 
 if os.path.isfile("env.py"):
     import env
@@ -28,13 +29,13 @@ ALLAUTH_TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates', 'allauth')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&d6qk%@=um#dvjqwm29r68%lgu#6_t!9y_*=$30w)uy)#z%gp*'
+SECRET_KEY = 'matako'
               
               
               
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =  'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [  '8000-maish79-whiskeyshop-1qhicexe84q.ws-eu101.gitpod.io', 'whiskey-shop-320e32983cd1.herokuapp.com' , 'localhost' ]
 
