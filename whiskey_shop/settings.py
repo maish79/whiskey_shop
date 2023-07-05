@@ -34,7 +34,7 @@ SECRET_KEY = '&d6qk%@=um#dvjqwm29r68%lgu#6_t!9y_*=$30w)uy)#z%gp*'
               
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = [  '8000-maish79-whiskeyshop-1qhicexe84q.ws-eu101.gitpod.io', 'whiskey-shop-320e32983cd1.herokuapp.com' , 'localhost' ]
 
