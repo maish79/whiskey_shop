@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 
-ALLOWED_HOSTS = [  '8000-maish79-whiskeyshop-1qhicexe84q.ws-eu101.gitpod.io', 'whiskey-shop.herokuapp.com' , 'localhost' ]
+ALLOWED_HOSTS = [  '8000-maish79-whiskeyshop-1qhicexe84q.ws-eu101.gitpod.io', 'whiskey-shop-320e32983cd1.herokuapp.com' , 'localhost' ]
 
 
 # Application definition
