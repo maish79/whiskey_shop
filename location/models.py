@@ -1,28 +1,5 @@
 from django.db import models
 
-DAYS = [
-   ('Monday', 'mon'),
-   ('Tuesday', 'tue'),
-   ('Wednesday', 'wed'),
-   ('Thursday', 'thu'),
-   ('Friday', 'fri'),
-   ('Saturday', 'sat'),
-   ('Sunday', 'sun'),
-]
-
-
-class Hours(models.Model):
-    day = models.CharField(
-        choices=DAYS,
-        max_length=9,
-        default='none'
-        )
-    open = models.TimeField()
-    close = models.TimeField()
-
-    def __str__(self):
-        return f'{self.day} from {self.open} - {self.close}'
-
 
 class Location(models.Model):
     name = models.CharField(max_length=256, unique=True)
@@ -37,9 +14,7 @@ class Location(models.Model):
     postcode = models.CharField(max_length=20, null=True, blank=True)
     latitude = models.DecimalField(max_digits=8, decimal_places=6)
     longitude = models.DecimalField(max_digits=8, decimal_places=6)
-    opening_hours = models.ManyToManyField(
-        Hours, related_name='opening_hours', blank=True
-        )
+    
     
     def __str__(self):
         return self.name

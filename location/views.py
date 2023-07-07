@@ -5,7 +5,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.template.defaultfilters import slugify
 
-from .models import Location, Hours
+from .models import Location
 from .forms import LocationForm
 
 
@@ -25,11 +25,10 @@ class LocationDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Location.objects.all()
         location = get_object_or_404(queryset, slug=slug)
-        days = Hours.objects.all().order_by('id')
-
+       
         context = {
             'location': location,
-            'days': days
+           
         }
         return render(request, 'locations/location_detail.html', context)
 
@@ -143,3 +142,5 @@ class LocationDelete(View):
             messages.error(request,
                            'An error occurred when deleting your location.')
             return redirect('locations')
+
+
