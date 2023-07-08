@@ -138,6 +138,7 @@ product-img {
   position: fixed;
   bottom: 10px;
   right: 10px;
+ 
 }
 
 .btt-link,
@@ -196,8 +197,9 @@ product-img {
 .social-icons a {
   display: inline-block;
   margin-right: 10px;
-  font-size: 24px;
-  color: #333;
+  font-size: 30px;
+  
+ 
 }
 
 .social-icons a:hover {
@@ -223,10 +225,7 @@ product-img {
   margin-bottom: 20px;
 }
 
-.social-icons a {
-  font-size: 18px;
-  margin-right: 10px;
-}
+
 
 #mc_embed_signup form {
   margin-bottom: 0;
