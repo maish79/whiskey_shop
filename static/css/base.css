@@ -59,28 +59,7 @@ html, body {
   }
 
   /* fixed top navbar only on medium and up */
-  @media (min-width: 992px) {
-    .fixed-top-desktop-only {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 1030;
-      background-color: #ffffff; 
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-  
-    .header-container {
-      padding-top: 160px; 
-    }
-  }
-
-  @media (max-width: 767px) {
-    .list-inline-item {
-      display: inline-block;
-      margin-right: 10px;
-    }
-  }
+ 
 
     /* Add some styling to the links in the navbar */
     .navbar-nav a {
@@ -205,6 +184,7 @@ product-img {
 .social-icons a:hover {
   color: #007bff;
 }
+
 
 
 /* Custom Styles */
