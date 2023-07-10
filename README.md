@@ -1,39 +1,121 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Whiskey Shop
 
-Welcome,
+[View the live project here](https://whiskey-shop-320e32983cd1.herokuapp.com/ "Link to deployed site - Whiskey shop")
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<hr>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+## Table of contents
 
-## Codeanywhere Reminders
+1. [UX](#ux)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+    * [Strategy](#strategy)
 
-`python3 -m http.server`
+        * [Project overview](#project-overview)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+        * [Project goals](#project-goals)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+        * [User stories](#user-stories)
 
-`http_server`
+    * [Scope](#scope)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+        * [Consistent features implemented](#consistent-features-implemented)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+        * [Features left to implement](#features-left-to-implement)
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    * [Structure](#structure)
 
-To log into the Heroku toolbelt CLI:
+        * [Database model](#database-model)
+        
+        * [Applications](#applications)
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+    * [Skeleton](#skeleton)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+        * [Wireframes](#wireframes)
 
----
+    * [Surface](#surface)
 
-Happy coding!
+        * [Color scheme](#color-scheme)
+
+        * [Typography](#typography)
+
+        * [Imagery](#imagery)
+
+    * [Web marketing](#web-marketing)
+
+        * [SEO](#seo)
+
+        * [Social media marketing](#social-media-marketing)
+
+        * [Email marketing](#email-marketing)
+
+        * [Privacy policy](#privacy-policy)
+
+* [Testing](#testing)
+
+    * [Manual testing](#manual-testing)
+
+    * [Bugs ans issues](#bugs-and-issues)
+
+    * [Validator testing](#validator-testing)
+
+* [Deployment](#deployment)
+
+* [Credits](#credits)
+
+    * [Technologies Used](#technologies-used)
+
+	* [Frameworks, Libraries & Programs Used](#frameworks,-Libraries-&-Programs-Used)
+
+	* [Content](#content)
+
+	* [Media](#media)
+
+* [Acknowledgments](#aknowledgements)
+
+## UX
+
+## 1.  Strategy
+
+### Project overview
+
+WhiskeyShop, built on Django's robust foundation, provides a comprehensive and user-friendly platform for whiskey enthusiasts to explore and purchase their favorite products. With its extensive catalog, secure transactions, user reviews, and powerful administration capabilities, WhiskeyShop delivers a delightful shopping experience. By leveraging Django's flexibility and scalability, the platform can easily adapt to future enhancements and meet the evolving needs of both customers and administrators in the dynamic world of whiskey retail.
+
+### Project goals
+
+### User Stories
+
+[Here](https://github.com/maish79/whiskey_shop/issues) is a list of user stories displayed as a Kanban board.
+
+## 2. Scope 
+
+### Consistent features implemented
+
+Most of the features have been designed to look the same, to allow users to gain familiarity with the site layout and enable them to find information quickly.
+
+* Card design for main layout
+* Home
+![Whiskey Home](read_me_docs/whiskey-home.png)
+* Products
+![Whiskey category](read_me_docs/whiskey-category.png)
+* Category
+![Whiskey about](read_me_docs/whiskey-about.png)
+* Location
+![Whiskey location](read_me_docs/whiskey-location.png)
+* FAQ
+![Whiskey faq](read_me_docs/whiskey-faq.png)
+* Sitemap
+![Whiskey sitemap](read_me_docs/whiskey-sitemap.png)
+* Whiskey add product
+![Whiskey add product](read_me_docs/whiskey-add-product.png)
+* Blog
+![Whiskey blog](read_me_docs/whiskey-blog.png)
+* Checkout
+![Whiskey checkout](read_me_docs/whiskey-checkout.png)
+* Signin
+![Whiskey signin](read_me_docs/whiskey-signin.png)
+*Signup
+![Whiskey signup](read_me_docs/whiskey-signup.png)
+* Success
+![Whiskey success](read_me_docs/whiskey-success.png)
+* Update details
+![Whiskey details](read_me_docs/whiskey-update-details.png)
