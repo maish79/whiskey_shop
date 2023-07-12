@@ -217,11 +217,9 @@ The custom models for PP5 are in:
 ![wireframe 10](read_me_docs/balsamic-add-product.png)
 
 
-
 All wireframes were created used [Balsamiq](https://balsamiq.com/)
 
-Wireframes for each device are linked here:
-- [Balsamiq wireframes](assets/documents)
+##### Back to [top](#table-of-contents)
 
 # Surface
 
@@ -295,9 +293,59 @@ All the manual testing was made on the [deployed site](https://whiskey-shop-320e
 
 The website was tested using Google Chrome Developer Tools Toggle Device Toolbar to simulate viewports of different devices.
 
-The website was tested on the following devices:
-- MacBook Pro
-- windows
+The website was tested on windows and macbook pro
+
+* lighthouse laptop
+
+![laptop test](read_me_docs/whiskey-lighthouse-laptop.png)
+
+* Lighthouse Mobile
+
+![CSS result](read_me_docs/whiskey-lighthouse-mobile.png)
+
+### Validation
+
+The W3C Markup Validation Service was used to validate the HTML of the website.
+
+<details><summary>Index</summary>
+<img src="read_me_docs/validator-index.png">
+</details>
+
+<details><summary>Bag</summary>
+<img src="read_me_docs/validator-bag.png">
+</details>
+
+<details><summary>Base</summary>
+<img src="read_me_docs/validator-base.png">
+</details>
+
+<details><summary>Blöog</summary>
+<img src="read_me_docs/validator-blog.png">
+</details>
+
+<details><summary>Checkout</summary>
+<img src="read_me_docs/validator-checkout.png">
+</details>
+
+<details><summary>Contact</summary>
+<img src="read_me_docs/validator-contact.png">
+</details>
+
+<details><summary>Faq</summary>
+<img src="read_me_docs/validator-faq.png">
+</details>
+
+<details><summary>Index</summary>
+<img src="read_me_docs/validator-index.png">
+</details>
+
+<details><summary>profile</summary>
+<img src="read_me_docs/validator-profile.png">
+</details>
+
+<details><summary>About Us</summary>
+<img src="read_me_docs/validator-about-us.png">
+</details>
 
 ### [CC3 W3 Validator](https://jigsaw.w3.org/css-validator)
 
