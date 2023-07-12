@@ -86,6 +86,8 @@ WhiskeyShop, built on Django's robust foundation, provides a comprehensive and u
 
 [Here](https://github.com/maish79/whiskey_shop/issues) is a list of user stories displayed as a Kanban board.
 
+##### Back to [top](#table-of-contents)
+
 ## 2. Scope 
 
 ### Consistent features implemented
@@ -178,9 +180,43 @@ The custom models for PP5 are in:
  
 * Location app
 
+##### Back to [top](#table-of-contents)
+
 ## 4. Skeleton
 
 ### Wireframes
+
+* Signup
+![wireframe 1](read_me_docs/balsamic-signup.png)
+
+* login
+![wireframe 2](read_me_docs/balsamic-login.png)
+
+* Home
+![wireframe 3](read_me_docs/balsamic-home.png)
+
+* Mobile
+![wireframe 4](read_me_docs/balsamic-mobile.png)
+
+* Add Bag
+![wireframe 5](read_me_docs/balsamic-add-bag.png)
+
+* Products
+![wireframe 6](read_me_docs/balsamic-products.png)
+
+* Location
+![wireframe 7](read_me_docs/balsamic-location.png)
+
+* Blog
+![wireframe 8](read_me_docs/balsamiq-blog.png)
+
+* Contact
+![wireframe 9](read_me_docs/balsamiq-contact.png)
+
+* Add Product
+![wireframe 10](read_me_docs/balsamic-add-product.png)
+
+
 
 All wireframes were created used [Balsamiq](https://balsamiq.com/)
 
@@ -219,6 +255,10 @@ It was implemented an email marketing feature on the footer where the user can s
 This tool is from MailChimp, and it was personalized in order to fit the rest of the project.
 
 ![MailCchimp](read_me_docs/whiskey-mailchimp.png)
+
+##### Back to [top](#table-of-contents)
+
+### Testing
 
 ## 1. Manual testing
 
@@ -280,6 +320,8 @@ countryfield.js
 stripe_element.js
 
  ![js result](read_me_docs/whiskey-js.png)
+
+ ##### Back to [top](#table-of-contents)
 
 
 ## Deployment
@@ -543,4 +585,9 @@ The regular process for deployment can be found on the CI Cheat Sheet from the F
 - [Sitemaps](!https://www.xml-sitemaps.com/): Generated the sitemap for my project.
 
 - [MailChimp](!https://www.mailchimp.com/): Used for email-marketing service
+
+##### Back to [top](#table-of-contents)
+
+### Acknowledgments
+
 
