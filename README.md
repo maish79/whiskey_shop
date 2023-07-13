@@ -20,7 +20,7 @@
 
         * [Consistent features implemented](#consistent-features-implemented)
 
-        * [Features left to implement](#features-left-to-implement)
+     
 
     * [Structure](#structure)
 
@@ -219,15 +219,27 @@ In this project, seven applications have been created:
 
 * Location
 
+* Profile 
+
 The custom models for PP5 are in:
 
-* Products app
-
-* Blog app
-
-* Contact app
+<details><summary>Products</summary>
+<img src="read_me_docs/models-products.png">
+</details>
+---
+<details><summary>Blog</summary>
+<img src="read_me_docs/model-blog.png">
+</details>
+---
+<details><summary>Contact</summary>
+<img src="read_me_docs/models-contact.png">
+</details>
+---
  
-* Location app
+<details><summary>Location</summary>
+<img src="read_me_docs/models-location.png">
+</details>
+
 
 ##### Back to [top](#table-of-contents)
 
