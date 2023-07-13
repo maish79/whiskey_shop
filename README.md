@@ -94,56 +94,105 @@ WhiskeyShop, built on Django's robust foundation, provides a comprehensive and u
 
 Most of the features have been designed to look the same, to allow users to gain familiarity with the site layout and enable them to find information quickly.
 
-* Card design for main layout
+ Card design for main layout
+
 * Home
+  - Home page includes navbar, main body and a footer
 
 ![Whiskey Home](read_me_docs/whiskey-home.png)
 
 * Products
+  - whiskey products shows the whiskey products available for selection
+  - only the admin has the power to edit or delete a product in this section.
+  - Customers can search this page by item name, as well as sort menu items alphabetically or by price.
 
-![Whiskey category](read_me_docs/whiskey-category.png)
+![Whiskey category](read_me_docs/whiskey-products.png)
 
-* Category
+* About
+
+   - The about us page contains a header image and some text describing the company's values.
+
+    - The "About Us" page in a whiskey app serves as a platform to tell the app's brand story, build trust, differentiate from competitors, provide contact information, educate users about the whiskey industry, promote values and sustainability practices, and demonstrate transparency and accountability
 
 ![Whiskey about](read_me_docs/whiskey-about.png)
 
 * Location
 
+  - The locations page contains a link to the location detail page for each of our shops.
+  - There are two views depending whether a user is logged in or not.
+  - Users who are logged in as admins can see the option to add a new location. 
+  - Logged-in users and unauthenticated users will not have the ability to add locations and therefore won't see this section of the page.
+
 ![Whiskey location](read_me_docs/whiskey-location.png)
 
 * FAQ
+
+  - The FAQ page contains a list of the most commonly asked questions in attempt to give the customer as much relevant information as they may need.
 
 ![Whiskey faq](read_me_docs/whiskey-faq.png)
 
 * Sitemap
 
+  - sitemap offers easy navigation through the websites content to the pages of one's interest
+
 ![Whiskey sitemap](read_me_docs/whiskey-sitemap.png)
 
 * Whiskey add product
 
+   - Logged in admin users have the ability to add menu items.
+   - Admin users can add a name, sku, description, image, price and category for a product.
+
+   
 ![Whiskey add product](read_me_docs/whiskey-add-product.png)
 
 * Blog
+
+  - The blog is useful for building customer relationships, and sharing news and updates. 
+  - The blog is alos uded showcase products, promote events and offers.
+
 
 ![Whiskey blog](read_me_docs/whiskey-blog.png)
 
 * Checkout
 
+    - The Checkpout page contains a summary of the items added to the customer's order.
+    - The summary contains individual item's images, names, quantities, and total price.
+    - The Shopping Cart page also contains a summary of the order cost and delivery cost.
+   
+   
+
 ![Whiskey checkout](read_me_docs/whiskey-checkout.png)
 
 * Signin
+
+    - Returning users can login to their account
+    - The user must have an account in the system and they must enter the correct username and password
+    - Users can sign in to there account with Google and Facebook social sign on
+    - Both fields are mandatory
 
 ![Whiskey signin](read_me_docs/whiskey-signin.png)
 
 * Signup
 
+    - New users can create an account
+    - The user must provide a valid username, password and password confirmation.
+    - User cannot register the same details twice for an account
+    - Once register the users are immediately logged in and taken to the home page
+
 ![Whiskey signup](read_me_docs/whiskey-signup.png)
 
 * Success
 
+    - The Checkpout page contains a summary of the customer's order.
+    - The summary contains the customer's order and personal information as well as a short summary of the item's added to this order.
+    - The summary also display a message notifying the customer of an approximate delivery time and that a confirmation email has been sent to the email supplied.
+
 ![Whiskey success](read_me_docs/whiskey-success.png)
 
 * Update details
+
+    - This page contains a form for customer's to supply their order information, personal information and payment information.
+    - Information entered on this page can be saved to the customer's profile.
 
 ![Whiskey details](read_me_docs/whiskey-update-details.png)
 
@@ -186,34 +235,45 @@ The custom models for PP5 are in:
 
 ### Wireframes
 
+
 * Signup
+
 ![wireframe 1](read_me_docs/balsamic-signup.png)
 
 * login
+
 ![wireframe 2](read_me_docs/balsamic-login.png)
 
 * Home
+  
 ![wireframe 3](read_me_docs/balsamic-home.png)
 
 * Mobile
+
 ![wireframe 4](read_me_docs/balsamic-mobile.png)
 
 * Add Bag
+
 ![wireframe 5](read_me_docs/balsamic-add-bag.png)
 
 * Products
+
 ![wireframe 6](read_me_docs/balsamic-products.png)
 
 * Location
+
 ![wireframe 7](read_me_docs/balsamic-location.png)
 
 * Blog
+
 ![wireframe 8](read_me_docs/balsamiq-blog.png)
 
 * Contact
+
 ![wireframe 9](read_me_docs/balsamiq-contact.png)
 
 * Add Product
+
 ![wireframe 10](read_me_docs/balsamic-add-product.png)
 
 
@@ -303,7 +363,13 @@ The website was tested on windows and macbook pro
 
 ![CSS result](read_me_docs/whiskey-lighthouse-mobile.png)
 
-### Validation
+##  Bugs and issues
+
+| Problem                                                                                                                                                                                                                                                           | Solution                                                                                                                            |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Create product.json and categories.json from scratch, I used a json formatter and when I tried to load the data, it couldn't because the syntax wasn't correct                                                                                                    | I submitted all my data into django admin, and then I dumped the data into my project and it was solved.                            |
+
+### Validator Testing
 
 The W3C Markup Validation Service was used to validate the HTML of the website.
 
