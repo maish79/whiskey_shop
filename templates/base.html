@@ -38,11 +38,16 @@
     {% block corejs %}
          <script src="https://kit.fontawesome.com/bd053955ad.js" crossorigin="anonymous"></script>
          <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --> 
+         <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
          <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-        <script src="https://js.stripe.com/v3/"></script>
+         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+          <!-- Stripe -->
+          <script src="https://js.stripe.com/v3/"></script>
+       
 
     
     {% endblock %}
@@ -51,114 +56,121 @@
     {% endblock %}
 
     
-    {% block extra_title %}
-  
-    {% endblock %}
-
+      {% block extra_title %}
+      <title>Whiskey Shop</title>
+        {% endblock %}
+    
     
   </head>
   <body>
-    <header class="container-fluid sticky-top"></header>
-    <div class="row bg-white pt-lg-2 d-flex" id="top-nav">
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-sm-none d-md-block d-none d-sm-block">
-          <a href="{% url 'home' %}" class="nav-link main-logo-ling">
+    <header class="container-fluid ">
+      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg text-lg-left">
+          <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <h2 class="logo-font text-black my-0">Whiskey Shop</h2>
           </a>
         </div>
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-sm-none d-md-block d-none d-sm-block">
-          
-          <form action="{% url 'products' %}" method="get">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+          <form method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
-              <input type="text" class="border-black rounded-0 border form-control" name="q" placeholder="Search our product">
-              <div class="input-group-append">
-                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                  <span class="icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                  </span>
-                </button>
-              </div>
+                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                <div class="input-group-append">
+                    <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                </div>
             </div>
-          </form>
-          
+        </form>
         </div>
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-sm-none d-md-block d-none d-sm-block">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
             <li class="list-inline-item dropdown">
-                <a class="text-black nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="text-center">
-                        <div><i class="fa-solid fa-user"></i></div>
-                        <p class="my-0">My Account</p>
-                    </div>
-                </a>
-                <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                  {% if request.user.is_authenticated %}
-                    <p class="text-muted text-center">Logged in as {{ user.username|capfirst }}</p>
-                    <hr>
-                    {% if request.user.is_superuser %}
-                      <a href="{% url 'add_product' %}" class="dropdown-item">Add a product</a>
-                    {% endif %}
-                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                  {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                  {% endif %}
+              <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                    <div><i class="fas fa-user fa-lg"></i></div>
+                    <p class="my-0">My Account</p>
                 </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              {% if request.user.is_authenticated %}
+                <p class="text-muted text-center">Logged in as {{ user.username|capfirst }}</p>
+                <hr>
+                {% if request.user.is_superuser %}
+                  <a href="{% url 'add_product' %}" class="dropdown-item">Add a product</a>
+                {% endif %}
+                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+              {% endif %}
+            </div>
             </li>
             <li class="list-inline-item">
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-                  <div class="text-center">
-                      <div><i class="fa-solid fa-cart-shopping"></i></div>
-                      <p class="my-0">
-                          {% if grand_total %}
-                              ${{ grand_total|floatformat:2 }}
-                          {% else %}
-                              $0.00
-                          {% endif %}
-                      </p>
-                  </div>
-              </a>
+                <div class="text-center">
+                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                    <p class="my-0">
+                        {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                        {% else %}
+                            $0.00
+                        {% endif %}
+                    </p>
+                </div>
+            </a>
             </li>
           </ul>
+        </div>
+      </div>
       </div>
       <div class="row bg-white">
-        <nav class="navbar navbar-expand-lg navbar-light w-100 ms-4">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-pressed="true" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            {% include 'includes/mobile-top-header.html' %}
-            {% include 'includes/main-nav.html' %}
-        </nav>
-    </div>
-    <div id="delivery-banner" class="row text-center bg-black">
-      <div class="col text-white">
-          <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
-      </div>            
-  </div>
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          {% include 'includes/mobile-top-header.html' %}
+          {% include 'includes/main-nav.html' %}
+      </nav>
+      </div>
+      <div class="delivery-banner-container">
+        <div id="delivery-banner" class="row text-center">
+          <div class="col bg-black text-white">
+            <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
+          </div>            
+        </div>
+      </div>
+      
+    </header>
+   
 
-     {% if messages %}
+    {% if messages %}
+    <div class="message-container">
         {% for message in messages %}
-          {% with message.level as level %}
-            {% if level == 40 %}
-              {% include 'includes/toasts/toast_error.html' %}
-            {% elif level == 30 %}
-              {% include 'includes/toasts/toast_warning.html' %}
-            {% elif level == 25 %}
-              {% include 'includes/toasts/toast_success.html' %}
-            {% else %}
-                {% include 'includes/toasts/toast_info.html' %}
-            {% endif %}
-          {% endwith %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endwith %}
         {% endfor %}
-    {% endif %}
+    </div>
+{% endif %}
 
-    {% block page_header %}
-    {% endblock %}
+{% block page_header %}
+{% endblock %}
 
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
 
-    {% block postloadjs %}
+{% block postloadjs %}
     <script>
       var toastElList = [].slice.call(document.querySelectorAll('.toast'))
       var toastList = toastElList.map(function(toastEl) {
@@ -168,69 +180,70 @@
       toastList.forEach(toast => toast.show()); // This show them
     </script>
     {% endblock %}
-
     
-  <footer class="container-wrapper mt-4">
-    <div class="container quotes-container content-container">
-      <section class="footer">
-        <div class="row">
-          <div class="col-12 col-md-6 text-center">
-            <h3>Social</h3>
-            <p>Keep up to date with all our latest offers</p>
-            <div class="social-icons">
-              <a href="https://www.facebook.com/profile.php?id=100094285261510" target="_blank">
-                <i class="fab fa-facebook" style="color: #3b5998;"></i>
-              </a>
-              <a href="https://www.instagram.com/" target="_blank">
-                <i class="fab fa-instagram" style="color: #e4405f;"></i>
-              </a>
-              <a href="https://www.pinterest.com/" target="_blank">
-                <i class="fab fa-pinterest" style="color: #bd081c;"></i>
-              </a>
-              <a href="https://twitter.com/" target="_blank">
-                <i class="fab fa-twitter" style="color: #1da1f2;"></i>
-              </a>
-            </div>
-          </div>
 
-          <div class="col-12 col-md-6 text-center">
-            <h3>Subscribe</h3>
-            <!-- Begin Mailchimp Signup Form -->
-            <div id="mc_embed_signup">
-              <form action="https://gmail.us21.list-manage.com/subscribe/post?u=4681803862a52a6100db911bf&amp;id=4d095adcc2&amp;f_id=0069c9e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                <div id="mc_embed_signup_scroll">
-                  <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
-                  <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                  <div class="mc-field-group">
-                    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
-                    <input type="email" value="" name="EMAIL" class="required email form-control form-control-sm" id="mce-EMAIL" required>
-                    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                  </div>
-                  <div id="mce-responses" class="clear foot">
-                    <div class="response" id="mce-error-response" style="display:none"></div>
-                    <div class="response" id="mce-success-response" style="display:none"></div>
-                  </div>
-                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4681803862a52a6100db911bf_4d095adcc2" tabindex="-1" value=""></div>
-                  <div class="optionalParent">
-                    <div class="clear foot">
-                      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <!--End mc_embed_signup-->
-          </div>
+
+<footer class="container-wrapper mt-4">
+<div class="container quotes-container content-container">
+  <section class="footer">
+    <div class="row">
+      <div class="col-12 col-md-6 text-center">
+        <h3>Social</h3>
+        <p>Keep up to date with all our latest offers</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=100094285261510" target="_blank">
+            <i class="fab fa-facebook" style="color: #3b5998;"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fab fa-instagram" style="color: #e4405f;"></i>
+          </a>
+          <a href="https://www.pinterest.com/" target="_blank">
+            <i class="fab fa-pinterest" style="color: #bd081c;"></i>
+          </a>
+          <a href="https://twitter.com/" target="_blank">
+            <i class="fab fa-twitter" style="color: #1da1f2;"></i>
+          </a>
         </div>
-      </section>
+      </div>
+
+      <div class="col-12 col-md-6 text-center">
+        <h3>Subscribe</h3>
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="https://gmail.us21.list-manage.com/subscribe/post?u=4681803862a52a6100db911bf&amp;id=4d095adcc2&amp;f_id=0069c9e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+              <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
+                <input type="email" value="" name="EMAIL" class="required email form-control form-control-sm" id="mce-EMAIL" required>
+                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+              </div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4681803862a52a6100db911bf_4d095adcc2" tabindex="-1" value=""></div>
+              <div class="optionalParent">
+                <div class="clear foot">
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--End mc_embed_signup-->
+      </div>
     </div>
-  </footer>
-    <!-- /.footer -->
-    <!-- Mail chimp JavaScript-->
-    
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-    
-   
-  </body>
+  </section>
+</div>
+</footer>
+<!-- /.footer -->
+<!-- Mail chimp JavaScript-->
+
+
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+
+</body>
 </html>

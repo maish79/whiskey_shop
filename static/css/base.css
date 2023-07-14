@@ -4,7 +4,7 @@
 
 html, body {
     height: 100%;
-    margin: 0;
+   
 }
 
 
@@ -52,14 +52,20 @@ html, body {
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-    .container {
-      max-width: 90%;
-    }
-  }
 
-  /* fixed top navbar only on medium and up */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
  
+
+ 
+
+  
 
     /* Add some styling to the links in the navbar */
     .navbar-nav a {
@@ -262,4 +268,3 @@ product-img {
     }
 
 
-  

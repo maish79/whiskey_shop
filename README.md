@@ -70,11 +70,10 @@
 
 	* [Media](#media)
 
-* [Acknowledgments](#aknowledgements)
 
 ## UX
 
-## 1.  Strategy
+#  Strategy
 
 ### Project overview
 
@@ -88,7 +87,7 @@ WhiskeyShop, built on Django's robust foundation, provides a comprehensive and u
 
 ##### Back to [top](#table-of-contents)
 
-## 2. Scope 
+# Scope 
 
 ### Consistent features implemented
 
@@ -196,7 +195,7 @@ Most of the features have been designed to look the same, to allow users to gain
 
 ![Whiskey details](read_me_docs/whiskey-update-details.png)
 
-## 3. Structure
+# Structure
 
 ### Database model
 
@@ -243,7 +242,7 @@ The custom models for PP5 are in:
 
 ##### Back to [top](#table-of-contents)
 
-## 4. Skeleton
+# Skeleton
 
 ### Wireframes
 
@@ -379,7 +378,8 @@ The website was tested on windows and macbook pro
 
 | Problem                                                                                                                                                                                                                                                           | Solution                                                                                                                            |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Create product.json and categories.json from scratch, I used a json formatter and when I tried to load the data, it couldn't because the syntax wasn't correct                                                                                                    | I submitted all my data into django admin, and then I dumped the data into my project and it was solved.                            |
+| I created product.json and categories.json from scratch, I used a json formatter and when I tried to load the data, it couldn't because the syntax wasn't correct                                                                                                    | I submitted all my data into django admin, and then I dumped the data into my project and it was solved.    
+ I had a problem with the banner(free delivery from over 80$) banner was conjesting my templates                      | I removed the fixed-top from the container-fluid div
 
 ### Validator Testing
 
