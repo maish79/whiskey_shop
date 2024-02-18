@@ -29,7 +29,7 @@ SECRET_KEY =  'matako'
 DEBUG = True
 
 
-ALLOWED_HOSTS = [ '8000-maish79-whiskeyshop-4iazfi7wiif.ws-eu108.gitpod.io', 'whiskey-shop-320e32983cd1.herokuapp.com' , 'localhost' ]
+ALLOWED_HOSTS = [ '8000-maish79-whiskeyshop-4iazfi7wiif.ws-eu108.gitpod.io',  'whiskey-shop-25750febac22.herokuapp.com' , 'localhost' ]
 
 
 # Application definition
